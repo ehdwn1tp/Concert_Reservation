@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- reservation. -->
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+        <title>Yoloplay 공연 예매</title>
+    </head>
+
+    <body>
+        <!-- 작품 리스트를 카드로 보여주기 -->
+        <!-- 포스터 이미지, 기수, 변경된 작품명, 공연 날짜 및 시간 등 DB에서 불러오기 -->
+        <!-- 화면 비율에 따라 한 행에 나오는 카드 개수 조정 -->
+
+        <!-- 공연 리스트 -->
+        <div class="container">
+            <div class="row py-3 text-center">
+                <h1>현재 예매 가능한 공연</h1>
+            </div>
+
+<!-- ['dreamers.jpg', '33기', 'Dear Dreamers', '23년 8월 26-27일', 'NH아트홀'] -->
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                {% for im, gn, nm, dt, th in img %}
+                <div class="col">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{% get_static_prefix %}{{im}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">00기 무인도탈출기</h5>
+                            <p class="card-text">2023년 12월 29-31일</p>
+                            <p class="card-text">안똔체홉극장</p>
+                            <a href="{% url 'reservation' %}" type="button" class="btn btn-primary">예매하기</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+                <!-- <div class="col"> -->
+                    <!-- <div class="card" style="width: 20rem;"> -->
+                        <!-- <img src="{% get_static_prefix %}Re.jpg" class="card-img-top" alt="..."> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">00기 Re,</h5> -->
+                            <!-- <p class="card-text">2024년 1월 20-21일</p> -->
+                            <!-- <p class="card-text">NH아트홀</p> -->
+                            <!-- <a href="{% url 'reservation' %}" type="button" class="btn btn-primary">예매하기</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+
+
+            </div>
+        </div>
+
+
+    </body>
+</html>

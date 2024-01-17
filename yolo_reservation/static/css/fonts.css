@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "NanumReg";
+    src: url("NANUMSQUARER.TTF");
+}
+
+@font-face {
+    font-family: "NanumBold";
+    src: url("NANUMSQUAREB.TTF");
+}
+
+@font-face {
+    font-family: "NanumExtBold";
+    src: url("NANUMSQUAREEB.TTF");
+}

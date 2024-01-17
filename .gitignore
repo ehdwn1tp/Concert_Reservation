@@ -1,0 +1,8 @@
+*.pptx
+*.txt
+*.pyc
+*.jpg
+*.png
+db.sqlite3
+
+__pycache__
