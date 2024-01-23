@@ -47,7 +47,7 @@ class Actor(Base):
 
     id = Column('ID', Integer, primary_key=True, autoincrement=True) # ID
     name = Column('NAME', String(5)) # 배우 이름
-    contact = Column('CONTACT', String) # 배우 연락처 (02-000-0000)
+    contact = Column('CONTACT', String) # 배우 연락처 (010-0000-0000)
     update = Column('UPDATE', DateTime) # 수정 일자
 
 
@@ -58,6 +58,7 @@ class Reservation(Base):
     code = Column('CODE', String) # 공연 코드(00000000) + 예매ID(000000) : 14자리
     prf_code = Column('PRF_CODE', String, ForeignKey(Performance.code)) # 공연 코드
     name = Column('NAME', String(5)) # 예매자 이름
-    license = Column('LICENSE', SmallInteger)
-    type = Column('TYPE', SmallInteger)
+    contact = Column('CONTACT', String(5)) # 예매자 연락처
+    count = Column('COUNT', String(5)) # 예매 인원
+    actors = Column('ACTORS', SmallInteger) # 공연 내 지인 명
     update = Column('UPDATE', DateTime) # 수정 일자
